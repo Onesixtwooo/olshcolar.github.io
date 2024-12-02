@@ -1,0 +1,220 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLSHCO: Discover Research</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #800000;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+        .logo {
+            cursor: pointer;
+            width: auto;
+            height: 30px;
+            overflow: hidden;
+        }
+        .header h1 {
+            font-size: 24px;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex: 1;
+            transition: all 0.3s ease;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #4B0082;
+            color: white;
+            padding: 1rem 0;
+            transition: all 0.3s ease;
+        }
+        .sidebar.closed {
+            width: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .toggle-button {
+            cursor: pointer;
+        }
+        .sidebar-menu {
+            list-style: none;
+        }
+        .sidebar-menu li a {
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            display: block;
+            transition: background-color 0.3s;
+        }
+        .sidebar-menu li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            transition: margin-left 0.3s ease;
+        }
+        .sidebar.closed + .main-content {
+            margin-left: 0;
+        }
+
+        .search-container {
+            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+          
+        }
+        .search-container form {
+    display: flex; /* Flexbox layout to align input and button */
+    width: 100%; /* Ensure the form takes full width */
+}
+
+
+
+        
+.login-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+.toggle-sidebar {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <button id="toggle-button" class="toggle-sidebar" aria-label="Toggle-button">☰</button>
+            <img src="images/olshcolar.png" class="logo" alt="Olshcolar Logo" onclick="window.location.href='index.html';" >
+        </div>
+        <button class="login-button">Login</button>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar closed">
+            <nav>
+            <ul class="sidebar-menu">
+    <li><a href="dashboard.php"><i class="fas fa-user"></i> My Profile</a></li>
+    
+    <li><a href="category.php"><i class="fa-solid fa-layer-group"></i> Categories</a></li>
+    <li><a href="category.php"><i class="fas fa-chart-line"></i> Analytics</a></li>
+    <li><a href="category.php"><i class="fas fa-book"></i> My Library</a></li>
+</ul>
+
+                   
+            </nav>
+        </aside>
+
+        <main class="main-content">
+        <div class="search-container">
+            <div class="container">
+                <div class="logo">
+                    <img src="images/olshcolarINDEX.png" alt="Scholar Search Logo">
+                </div>
+                <form class="search-form" action="search.php" method="get">
+                    <input type="text" class="search-input" name="q" placeholder="Search Scholar..." aria-label="Search Scholar">
+                    <button type="submit" class="search-button" aria-label="Search">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                    </button>
+                </form>
+                
+                <div class="links">
+                    <a href="search.php">View All Researches</a>
+                    <a href="category.php">Categories</a>
+                
+                </div>
+    
+    
+                <!-- New div for the content inside the image -->
+    <div class="choices">
+        <div class="browse-section">
+            <h3>Browse by Level</h3>
+            <ul>
+                <li><a href="#">Junior High Researches</a></li>
+                <li><a href="#">Senior High Researches</a></li>
+                <li><a href="#">Capstone Projects</a></li>
+                <li><a href="#">Thesis</a></li>
+            </ul>
+        </div>
+    
+      
+    
+        <div class="browse-section">
+            <h3>Browse by Methodologies</h3>
+            <ul>
+                <li><a href="#">Quantitative</a></li>
+                <li><a href="#">Qualitative</a></li>
+                <li><a href="#">Experimental</a></li>
+                <li><a href="#">Mixed-Methods</a></li>
+                <li><a href="#">Electronic Resource</a></li>
+                <li><a href="#">Case Study</a></li>
+                <li><a href="#">Action Research</a></li>
+                <li><a href="#">Analysis</a></li>
+                <li><a href="#">Ethnographic</a></li>
+                <li><a href="#">More.</a></li>
+            </ul>
+        </div>
+    
+        
+    </div>
+            </div>
+            
+        </div>
+
+    <script>
+     
+
+
+document.getElementById("toggle-button").addEventListener("click", function() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.classList.toggle("closed");
+    });
+
+
+
+
+
+    </script>
+</body>
+</html>

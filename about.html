@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLSHCO: School Research Manager</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #FFF8F8;
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            background-color: white;
+            border-bottom: 1px solid #800000;
+            transition: all 0.3s;
+        }
+        header.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+        nav ul li {
+            margin-left: 1rem;
+        }
+        nav ul li a {
+            color: #800000;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #A52A2A;
+        }
+        .logo-container {
+            display: none;
+            align-items: center;
+        }
+        .logo-container img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        .logo-container span {
+            color: #800000;
+            font-weight: 600;
+        }
+        header.sticky .logo-container {
+            display: flex;
+        }
+
+        /* Hero section styles */
+        .hero {
+            background-color: #800000;
+            color: white;
+            text-align: center;
+            padding: 4rem 0;
+        }
+        .hero img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: white;
+            padding: 0.5rem;
+            margin-bottom: 2rem;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #800000;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .btn:hover {
+            background-color: #FFF0F0;
+        }
+
+        /* Features section styles */
+        .features {
+            padding: 4rem 0;
+        }
+        .features h2 {
+            text-align: center;
+            color: #800000;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .feature-card {
+            border: 2px solid #800000;
+            border-radius: 5px;
+            padding: 1.5rem;
+        }
+        .feature-card h3 {
+            color: #800000;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            font-size: 1.25rem;
+        }
+        .feature-card svg {
+            width: 24px;
+            height: 24px;
+            margin-right: 0.5rem;
+        }
+
+        /* Audience section styles */
+        .audience {
+            background-color: #FFF0F0;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .audience h2 {
+            color: #800000;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+        .audience p {
+            color: #800000;
+            margin-bottom: 2rem;
+        }
+        .map-placeholder {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            background-color: #ddd;
+            margin: 0 auto;
+            border-radius: 5px;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #800000;
+            color: white;
+            padding: 2rem 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        footer h3 {
+            margin-bottom: 1rem;
+            font-size: 1.25rem;
+        }
+        footer ul {
+            list-style: none;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero p {
+                font-size: 1rem;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <img src="logo.png" alt="OLSHCO Logo">
+                    <span>OLSHCO School Research Manager</span>
+                </div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <img src="logo.png" alt="OLSHCO Logo">
+                <h1>OLSHCOLAR:<br> <h2>A OLSHCO School-Based Research Manager</h2></h1>
+             
+                <p>"Where Knowledge Blossoms: Your Gateway to Enlightened Exploration"</p>
+                <a href="login.php" class="btn">Sign In</a>
+               
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                            </svg>
+                            Search Functionality
+                        </h3>
+                        <p>This feature allows users (students, teachers, and librarians) to search for books or resources within the library collection. Users can search by title, author, subject, or keyword to locate the material they need.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            Cataloging
+                        </h3>
+                        <p>Cataloging involves organizing and classifying library materials systematically. It includes creating detailed records for each item, including information like title, author, genre, and publication date.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                            </svg>
+                            Research Management
+                        </h3>
+                        <p>This feature helps users manage their research projects effectively. It includes tools for organizing research material, such as citations, notes, and sources. It also provides access to journals and other resources that can support research activities.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="audience">
+            <div class="container">
+                <h2>For: Students, Teachers, Researchers & Community</h2>
+                <p>It's your go-to solution for staying organized and on top of your scholarly pursuits.</p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d960.427063189545!2d120.76735923716181!3d15.660516757169894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33912cdb2318296d%3A0xe4e2117e97dfc92e!2sOur%20Lady%20of%20The%20Sacred%20Heart%20College!5e0!3m2!1sen!2sph!4v1731391302641!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>OLSHCO</h3>
+                    <p>A School that believes that education shall lead young men and women into human fullness, combining their life and work skills with their sacred love for all persons as desired by the Oneness of the Heart of Jesus and Mary.</p>
+                </div>
+                <div>
+                    <h3>More Pages</h3>
+                    <ul>
+                        <li><a href="#">OLSHCO123</a></li>
+                        <li><a href="#">OLSHCO Site</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Contacts</h3>
+                    <p>Tel. No.: 0956-2774029</p>
+                    <p>Email: olshco1947@yahoo.com.ph</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 OLSHCO. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            const featuresSection = document.getElementById('features');
+
+            function checkSticky() {
+                if (window.scrollY >= featuresSection.offsetTop) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            }
+
+            window.addEventListener('scroll', checkSticky);
+        });
+    </script>
+</body>
+</html>
